@@ -71,7 +71,7 @@ int find_max_index(int *A, int s, int e)
     return 0;
 }*/
 
-int main(void){
+/*int main(void){
 	int T, i, N, j;
 
 	scanf("%d", &T);
@@ -97,4 +97,41 @@ int main(void){
 	}
 
 	return 0;
+}*/
+
+/*
+ *  3 6 9 °ÔÀÓ
+ */
+void set_num(int n){
+	int x = n;
+	int y = n;
+	int c = 0;
+	while(y>0)
+	{
+		if((y % 10) != 0 && (y % 10) % 3 == 0){
+			c++;
+		}
+		y = y / 10;
+	}
+	if(c==0){
+		printf("%d", x);
+	}
+	else{
+		for(int i=0; i<c; i++){
+			printf("-");
+		}
+	}
+}
+
+int main(){
+	int cnt;
+	//int* num;
+	scanf("%d", &cnt);
+	//num = (int*)malloc(sizeof(int)*cnt);
+	set_num(1);
+	for(int i=1; i<cnt; i++){
+		printf(" ");
+		set_num(i+1);
+	}
+
 }
